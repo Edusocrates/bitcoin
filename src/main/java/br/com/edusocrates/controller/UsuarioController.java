@@ -2,6 +2,7 @@ package br.com.edusocrates.controller;
 
 import br.com.edusocrates.model.Usuario;
 
+import javax.annotation.security.PermitAll;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -13,9 +14,10 @@ public class UsuarioController  {
 
     @POST
     @Transactional
+    @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
     public void inserir(Usuario usuario){
-        Usuario.persist(usuario);
+        Usuario.adicionar( usuario);
     }
 
 

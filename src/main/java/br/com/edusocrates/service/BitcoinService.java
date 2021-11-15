@@ -14,7 +14,7 @@ import java.util.List;
 @RegisterRestClient(configKey = "bitcoin-api")
 public interface BitcoinService {
 
-    @GET
+    @GET 
     @Produces(MediaType.APPLICATION_JSON)
     public List<Bitcoin> listar();
 
